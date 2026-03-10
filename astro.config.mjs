@@ -15,9 +15,6 @@ export default defineConfig({
 		starlight({
 			title: 'Spec Kit Guide',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/rising3/speckit-guide' }],
-			editLink: {
-				baseUrl: 'https://github.com/rising3/speckit-guide/edit/next/',
-			},
 			sidebar: [
 				{
 					label: 'ガイド',
