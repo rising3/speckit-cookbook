@@ -1,6 +1,6 @@
-# Spec Kit Cookbook
+# Spec Kit Guide
 
-Astro Starlight を使って構築した Spec Kit Cookbook のドキュメントサイトです。
+Astro Starlight を使って構築した Spec Kit Guide です。
 
 ## 開発コマンド
 

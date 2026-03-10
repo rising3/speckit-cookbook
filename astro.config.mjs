@@ -8,10 +8,10 @@ export default defineConfig({
 	integrations: [
 		mermaid(),
 		starlight({
-			title: 'Spec Kit Cookbook',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/rising3/speckit-cookbook' }],
+			title: 'Spec Kit Guide',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/rising3/speckit-guide' }],
 			editLink: {
-				baseUrl: 'https://github.com/rising3/speckit-cookbook/edit/next/',
+				baseUrl: 'https://github.com/rising3/speckit-guide/edit/next/',
 			},
 			sidebar: [
 				{
