@@ -4,6 +4,7 @@
 
 - 初めて使う人向けの短縮版: [spec-kit_quickstart_guide.md](spec-kit_quickstart_guide.md)
 - 実行順、入出力、前後関係まで確認したい人向けの詳細版: [spec-kit_command_reference.md](spec-kit_command_reference.md)
+- 調査ノート: [spec-kit_research.md](spec-kit_research.md)
 
 ## 最短で把握したい全体像
 
