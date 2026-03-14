@@ -36,6 +36,10 @@ export default defineConfig({
 						},
 					],
 				},
+				{
+					label: '調査ノート',
+					autogenerate: { directory: 'research' },
+				},
 			],
 		}),
 	],
