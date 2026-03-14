@@ -8,8 +8,6 @@
 - 参照バージョン: `0.3.0` (`pyproject.toml`)
 - 主に確認した範囲: `README.md`, `spec-driven.md`, `docs/`, `templates/`, `scripts/`, `src/specify_cli/`, `extensions/`, `presets/`, `tests/`
 
-> 依頼文では `clarify` / `checklist` / `analyze` を「オプション」と呼んでいるが、upstream の実装上はこれらも `templates/commands/*.md` に置かれた通常コマンドである。ここでは「ワークフロー上の任意ステップ」という意味で「オプション」として整理する。
-
 ## 先に結論
 
 - Spec Kit の中核は `specify` CLI ではなく、`specify init ...` によって各 AI エージェント向けに配布される `/speckit.*` コマンドテンプレート群である。
@@ -117,7 +115,7 @@
 
 ### 重要な注意点
 
-- `clarify`, `checklist`, `analyze` は「オプション」というより「任意実行のコマンド」。テンプレートファイル上も独立コマンドとして実装されている。
+- `clarify`, `checklist`, `analyze` は「任意実行のコマンド」。テンプレートファイル上も独立コマンドとして実装されている。
 - 実装名は `implement` であり、`impliment` ではない。
 - 形式的な CLI フラグが必要なのは内部補助スクリプトであり、通常の `/speckit.*` 使用者は自然言語引数だけを意識すればよい。
 
@@ -207,7 +205,7 @@
 4. `Run all [P] tasks in Phase 2 in parallel before proceeding to Phase 3.`
 5. `Implement only the API and test tasks first. Leave the frontend tasks unchecked.`
 
-## オプション扱いの任意ステップ: clarify / checklist / analyze
+## 任意ステップ: clarify / checklist / analyze
 
 ### /speckit.clarify
 
@@ -306,13 +304,6 @@
 
 1. Spec Kit の「コマンド」は実質的には AI エージェントに配る prompt templates であり、通常の CLI subcommand とは責務が違う。
 2. `/speckit.specify` だけは feature description が必須だが、それ以外は「引数なし + 現在の artifact を読む」でも動く設計が多い。
-3. `clarify`, `checklist`, `analyze` は optional とされる一方、テンプレートの中ではかなり細かい品質制御が入っており、実運用では省略しにくい。
+3. `clarify`, `checklist`, `analyze` は任意ステップという位置づけではあるが、テンプレートの中ではかなり細かい品質制御が入っており、実運用では省略しにくい。
 4. extension / preset で core command を上書きできるため、upstream の説明は「標準実装」として理解するのが正しい。
 5. `src/specify_cli/agents.py` を見ると、Copilot/Gemini/Claude など各 agent に合わせて command file format と引数プレースホルダが変換される。このため docs では「自然言語を後ろに足す」という説明が最も本質的で、agent 固有書式の差は補足扱いでよい。
-
-## この調査をローカルドキュメントへ反映する方針
-
-- `specify` は「自然言語の feature description が必須」であることを明示する
-- `constitution`, `plan`, `tasks`, `implement`, `clarify`, `checklist`, `analyze` は「引数なしでも実行可能 / 追加指示を渡すと挙動を絞れる」ことを明示する
-- 各ドキュメントには「引数の具体例」を 3〜5 件ずつ揃え、単なる full command 例だけでなく「どんな自然言語を載せるべきか」が読み取れるようにする
-- Starlight 版には research コンテンツとして同等情報を移植し、トップページとサイドバーから辿れるようにする

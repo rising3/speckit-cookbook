@@ -27,6 +27,9 @@ sidebar:
 
 ```text
 /speckit.constitution
+```
+
+```text
 /speckit.constitution コード品質、テスト、自動化、アクセシビリティ、パフォーマンス、セキュリティを重視するプロジェクト原則を定義してください
 ```
 
